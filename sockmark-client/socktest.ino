@@ -4,7 +4,10 @@
 #define WIFI_SSID "Mi Wi Fi"
 #define WIFI_PASS "--\\_(0_0)_/--"
 IPAddress server(192, 168, 86, 69);
-WiFiClient client;
+char serverAddress[] = "http://192.168.86.69";  // server address
+int port = 8080;
+WiFiClient wclient;
+WebSocketClient client = WebSocketClient(wifi, serverAddress, port);
 HTTPClient http;
 void setup()
 {
@@ -33,9 +36,39 @@ void setup()
 
 void loop()
 {
-  http.begin("http://192.168.86.69:8080");
-  http.GET();
-  Serial.print(http.getString());
+    Serial.println("starting WebSocket client");
+  client.begin();
+
+  while (client.connected()) {
+    Serial.print("Sending hello ");
+    Serial.println(count);
+
+    // send a hello #
+    client.beginMessage(TYPE_TEXT);
+    client.print("hello ");
+    client.print(count);
+    client.endMessage();
+
+    // increment count for next message
+    count++;
+
+    // check if a message is available to be received
+    int messageSize = client.parseMessage();
+
+    if (messageSize > 0) {
+      Serial.println("Received a message:");
+      Serial.println(client.readString());
+    }
+
+    // wait 5 seconds
+    delay(5000);
+  }
+
+  Serial.println("disconnected");
+
+  // http.begin("http://192.168.86.69:8080");
+  // http.GET();
+  // Serial.print(http.getString());
   // while (client.available())
   // {
   //   char[]
