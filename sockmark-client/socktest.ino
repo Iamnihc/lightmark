@@ -1,3 +1,6 @@
+#include <b64.h>
+
+
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 // Set WiFi credentials

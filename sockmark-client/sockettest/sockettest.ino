@@ -1,3 +1,6 @@
+#include <ArduinoHttpClient.h>
+#include <HttpClient.h>
+
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 // Set WiFi credentials
@@ -5,7 +8,7 @@
 char ssid[] = "Mi Wi Fi";
 char pass[] = "--\\_(0_0)_/--";
 
-char serverAddress[] = "echo.websocket.org";  // server address
+char serverAddress[] = "http://192.168.86.69";  // server address
 int port = 80;
 
 WiFiClient wifi;
@@ -22,6 +25,7 @@ void setup() {
     // Connect to WPA/WPA2 network:
     status = WiFi.begin(ssid, pass);
   }
+  
 
   // print the SSID of the network you're attached to:
   Serial.print("SSID: ");
