@@ -1,0 +1,16 @@
+{
+  "name": "sockmark-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "socktest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "etherport-client": "^0.1.4",
+    "johnny-five": "^2.0.0"
+  }
+}

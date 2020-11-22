@@ -1,0 +1,5 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"brightness,:P,color";"Panasonic_EVQPUK_EVQPUB";3;"SW_SPST";;;
+2;"r_main,r_brightness,r_color";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";3;"R_Small";;;
+3;"devon,patrick,owen,keon,isabelle,gil,chinmai,billa,amrita,vasco";"LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm";10;"WS2812B";;;
+4;"U1";"WEMOS_D1_mini_light";1;"WeMos_D1_mini";;;

@@ -1,0 +1,7 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+":P","SW_SPST","Panasonic_EVQPUK_EVQPUB",59.690000,-88.900000,180.000000,bottom
+"brightness","SW_SPST","Panasonic_EVQPUK_EVQPUB",48.260000,-88.900000,180.000000,bottom
+"color","SW_SPST","Panasonic_EVQPUK_EVQPUB",71.120000,-88.900000,180.000000,bottom
+"r_brightness","R_Small","R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",46.990000,-91.440000,0.000000,bottom
+"r_color","R_Small","R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",69.850000,-91.440000,0.000000,bottom
+"r_main","R_Small","R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",58.420000,-91.440000,0.000000,bottom
