@@ -36,27 +36,27 @@ void loop()
   http.begin("http://192.168.86.69:8080");
   http.GET();
   Serial.print(http.getString());
-  // while (client.available())
-  // {
-  //   char[]
-  //   char c = client.read();
+  while (client.available())
+  {
+    char[]
+    char c = client.read();
 
-  //   Serial.write(c);
-  // }
+    Serial.write(c);
+  }
 
-  // Serial.println("\nStarting connection to server...");
+  Serial.println("\nStarting connection to server...");
 
-  // // if you get a connection, report back via serial:
+  // if you get a connection, report back via serial:
 
-  // if (client.connect(server, 8080))
-  // {
+  if (client.connect(server, 8080))
+  {
 
-  //   Serial.println("connected to server");
+    Serial.println("connected to server");
 
-  //   // Make a HTTP request:
+    // Make a HTTP request:
 
-  //   client.println("GET /");
-  //   client.println();
-  // }
-  // delay(100)
+    client.println("GET /");
+    client.println();
+  }
+  delay(100)
 }

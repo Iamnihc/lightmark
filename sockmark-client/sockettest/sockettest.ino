@@ -1,41 +1,42 @@
 #include <ArduinoHttpClient.h>
-#include <HttpClient.h>
 
-#include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+
+
 // Set WiFi credentials
 
-char ssid[] = "Mi Wi Fi";
-char pass[] = "--\\_(0_0)_/--";
 
-char serverAddress[] = "http://192.168.86.69";  // server address
-int port = 80;
+#include <ESP8266WiFi.h>        // Include the Wi-Fi library
 
-WiFiClient wifi;
-WebSocketClient client = WebSocketClient(wifi, serverAddress, port);
+const char* ssid     = "guest";         // The SSID (name) of the Wi-Fi network you want to connect to
+const char* password = "guestwifi";     // The password of the Wi-Fi network
+char serverAddress[] = "http://192.268.86.69";  // server address
+int port = 8080;
+
+WebSocketClient client = WebSocketClient(WiFi.wifi, serverAddress, port);
 int status = WL_IDLE_STATUS;
 int count = 0;
 
 void setup() {
-  Serial.begin(9600);
-  while ( status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to Network named: ");
-    Serial.println(ssid);                   // print the network name (SSID);
-
-    // Connect to WPA/WPA2 network:
-    status = WiFi.begin(ssid, pass);
-  }
+  Serial.begin(9600);         // Start the Serial communication to send messages to the computer
+  delay(10);
+  Serial.println('\n');
   
+  WiFi.begin(ssid, password);             // Connect to the network
+  Serial.print("Connecting to ");
+  Serial.print(ssid); Serial.println(" ...");
 
-  // print the SSID of the network you're attached to:
-  Serial.print("SSID: ");
-  Serial.println(WiFi.SSID());
+  int i = 0;
+  while (WiFi.status() != WL_CONNECTED) { // Wait for the Wi-Fi to connect
+    delay(1000);
+    Serial.print(++i); Serial.print(' ');
+  }
 
-  // print your WiFi shield's IP address:
-  IPAddress ip = WiFi.localIP();
-  Serial.print("IP Address: ");
-  Serial.println(ip);
+  Serial.println('\n');
+  Serial.println("Connection established!");  
+  Serial.print("IP address:\t");
+  Serial.println(WiFi.localIP());         // Send the IP address of the ESP8266 to the computer
 }
+
 
 void loop() {
   Serial.println("starting WebSocket client");
