@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 // Set WiFi credentials
-#define WIFI_SSID "Mi Wi Fi"
-#define WIFI_PASS "--\\_(0_0)_/--"
+#define WIFI_SSID "guest"
+#define WIFI_PASS "guestwifi"
 IPAddress server(192, 168, 86, 69);
 WiFiClient client;
 HTTPClient http;
