@@ -6,9 +6,13 @@
                 "/home/chinmi/Arduino/libraries/HttpClient",
                 "/home/chinmi/.arduino15/packages/esp8266/tools/**",
                 "/home/chinmi/.arduino15/packages/esp8266/hardware/esp8266/2.7.4/**",
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/home/chinmi/Downloads/arduino-1.8.13/libraries/**",
+                "/home/chinmi/Arduino/libraries/**"
             ],
-            "defines": [],
+            "defines": [
+                "USBCON"
+            ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
